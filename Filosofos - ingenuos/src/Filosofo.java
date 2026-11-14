@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Filosofo extends Thread{
@@ -15,8 +14,6 @@ public class Filosofo extends Thread{
     static final int tempoPegarGarfo= 100;
     static final int tempoC = 500;
 
-    Random random = new Random();
-
     public Filosofo(String nome, ReentrantLock dir,ReentrantLock esq) {
         this.nome= nome;
         this.estado = 0;
@@ -27,13 +24,13 @@ public class Filosofo extends Thread{
         this.dir= dir;
     }
 
-    public void jantar() {
+    public void run() {
         try {
             while (true) {
                 mudarEstado(0); //0 é pensando
                 Thread.sleep(tempoP);
 
-                mudarEstado(1);
+                mudarEstado(1); //com fome
                 esq.lock();
                 garfoe= true;
                 System.out.println(this.nome + " pegou o garfo esquerdo");
@@ -41,11 +38,17 @@ public class Filosofo extends Thread{
                 Thread.sleep(tempoPegarGarfo);
 
                 dir.lock();
+                garfod= true;
+                System.out.println(this.nome + " pegou o garfo direito");
 
+                mudarEstado(2); //comendo
+                vezescomeu +=1;
+                Thread.sleep(tempoC);
 
-
-
-
+                esq.unlock();
+                dir.unlock();
+                garfoe = false;
+                garfod = false;
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -62,5 +65,15 @@ public class Filosofo extends Thread{
         } else {
             System.out.println(this.nome + " está comendo");
         }
+    }
+
+    public boolean travado() {
+        if (estado == 1 && garfoe && !garfod){
+            return true;
+        }
+        else{
+            return false;
+        }
+
     }
 }
