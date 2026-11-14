@@ -1,21 +1,27 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main{
 
-    static ArrayList<Filosofo> filosofos = new ArrayList<>();
-    static ArrayList<String> nomes= new ArrayList<>();
-
+    static List<String> nomes = Arrays.asList("Sócrates", "Platão", "Diógines", "Pitágoras", "Epicuro");
 
     public int rodadas;
     public static int f = 5;
-    public int  garfos = f-1;
 
 
     static void main(String[] args) {
 
+        boolean[] garfoLivre = new boolean[f-1];
+        Filosofo[] filosofos = new Filosofo[f];
+
+
         for(int i = 0; i < f; i++){
-            Filosofo filosofo = new Filosofo(i);
-            filosofos.add(filosofo);
+            filosofos[i] = new Filosofo(nomes.get(i));
+            garfoLivre[i]= true;
+            System.out.println(nomes.get(i));
         }
+
 
     }
 }

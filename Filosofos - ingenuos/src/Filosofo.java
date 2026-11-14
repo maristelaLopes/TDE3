@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Filosofo {
 
-    public int nome;
+    public String nome;
     public int estado; //0 pensado, 1 com fome, 2 comendo
     public boolean garfod;
     public boolean garfoe;
@@ -10,14 +10,12 @@ public class Filosofo {
 
     Random random = new Random();
 
-    public Filosofo(int nome) {
+    public Filosofo(String nome) {
         this.nome= nome;
         this.estado = 0;
         this.garfod = false;
         this.garfoe = false;
         this.rodada =0;
-
-        mudarEstado();
     }
 
     public void mudarEstado() {
