@@ -12,7 +12,7 @@ public class Main{
 
     static void main(String[] args) {
 
-        boolean[] garfoLivre = new boolean[f-1];
+        boolean[] garfoLivre = new boolean[f];
         Filosofo[] filosofos = new Filosofo[f];
 
 
