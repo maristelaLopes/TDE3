@@ -64,19 +64,6 @@ public class Filosofo extends Thread{
             System.out.println(this.nome + " está com fome");
         } else {
             System.out.println(this.nome + " está comendo");
-            System.out.println("-------------------------------------------");
-            System.out.println(this.nome +" comeu "+ vezescomeu + " vezes");
-            System.out.println("-------------------------------------------");
         }
-    }
-
-    public boolean travado() {
-        if (estado == 1 && garfoe && !garfod){
-            return true;
-        }
-        else{
-            return false;
-        }
-
     }
 }

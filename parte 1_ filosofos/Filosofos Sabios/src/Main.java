@@ -29,26 +29,5 @@ public class Main{
             filosofos[i].start();  // inicia as threads
         }
 
-        while (true) {
-            Thread.sleep(2400);
-            boolean deadlock = true;
-            for (Filosofo f: filosofos){
-                if (!f.travado()){
-                    deadlock= false;
-                    break;
-                }
-            }
-            if (deadlock){
-                System.out.println("------------------------------------------------");
-                System.out.println("Deadlock");
-                System.out.println("------------------------------------------------");
-                for(Filosofo f: filosofos){
-                    System.out.println(f.nome+ " comeu " + f.vezescomeu + " vezes");
-                }
-                System.exit(0);
-            }
-
-        }
     }
-
 }

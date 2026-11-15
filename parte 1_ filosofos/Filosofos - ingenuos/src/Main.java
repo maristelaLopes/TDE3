@@ -8,7 +8,6 @@ public class Main{
 
     public static int f = 5;
 
-
     public static void main(String[] args) throws InterruptedException {
 
         Filosofo[] filosofos = new Filosofo[f];
@@ -24,27 +23,6 @@ public class Main{
 
         for (int i = 0; i < f; i++) {
             filosofos[i].start(); // metódo da biblioteca padrão do java, inicia diferente de uma função, como se fossem treads mesmo
-        }
-
-        while (true) {
-            Thread.sleep(2400);
-            boolean deadlock = true;
-            for (Filosofo f: filosofos){
-                if (!f.travado()){
-                    deadlock= false;
-                    break;
-                }
-            }
-            if (deadlock){
-                System.out.println("------------------------------------------------");
-                System.out.println("Deadlock");
-                System.out.println("------------------------------------------------");
-                for(Filosofo f: filosofos){
-                    System.out.println(f.nome+ " comeu " + f.vezescomeu + " vezes");
-                }
-                System.exit(0);
-            }
-
         }
     }
 }
