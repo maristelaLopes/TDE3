@@ -23,7 +23,7 @@ public class Main{
         }
 
         for (int i = 0; i < f; i++) {
-            filosofos[i].start();                     // inicia as threads
+            filosofos[i].start(); // metódo da biblioteca padrão do java, inicia diferente de uma função, como se fossem treads mesmo
         }
 
         while (true) {
