@@ -1,7 +1,7 @@
 # TDE3
 Atividade feita para a matéria de performace em sistemas cyberfísicos na PucPr
 
-link do vídeo: 
+link do vídeo: https://youtu.be/8PMqQ946umw
 
 Feito por:<br>
  Maristela Alves Lopes Lederer<br>
