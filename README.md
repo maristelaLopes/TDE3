@@ -23,3 +23,27 @@ Depois de resolver o problema, os garfos são escolhidos pelos seguintes paramet
 sendo o esquerdo: garfos[menor], e o direito: garfos[maior], assim eles pegam os garfos na seguinte ordem: 
 f0--> g0, f1--> g1, f2--> g2, f3--> g3, f4--> g0.
 assim ignorando a espera circular.
+
+
+Fluxograma:
+[Inicio]
+   |
+[Pensando]
+   |
+[Com fome]
+   |
+[Pedir garfo de menor número]
+   |
+<Garfo livre?> --não--> [Esperar na fila] --volta--> <Garfo livre?>
+   | sim
+[Pedir garfo de maior número]
+   |
+<Garfo livre?> --não--> [Esperar na fila (segurando o 1º)] --volta--> <Garfo livre?>
+   | sim
+[Comendo]
+   |
+[Soltar garfo de MAIOR número]
+   |
+[Soltar garfo de MENOR número]
+   |
+(volta para Pensando)
