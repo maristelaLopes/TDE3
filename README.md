@@ -3,11 +3,10 @@ Atividade feita para a matéria de performace em sistemas cyberfísicos na PucPr
 
 link do vídeo: 
 
-Feito por:
- Maristela Alves Lopes Lederer
- Rodrigo do Amaral Junior
- Vitoria Giovana Aparecida de Faria
-Vitoria Giovana Aparecida de Faria
+Feito por:<br>
+ Maristela Alves Lopes Lederer<br>
+ Rodrigo do Amaral Junior<br>
+ Vitoria Giovana Aparecida de Faria<br>
 
 
 
